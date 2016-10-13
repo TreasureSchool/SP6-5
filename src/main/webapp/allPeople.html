@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>All People</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
+        <script type="text/javascript" src="angular.min.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    </head>
+    <body>
+        <h3>Navn</h3>
+        <h3><em class="pull-right">Details</em></h3>
+        <div ng-repeat="user in userCtrl.users">
+            {{user.picture.thumbnail}} {{user.first}}  {{user.last}}
+            <em class="pull-right"><a href="#/detail" ng-click="">Details</a></em>   
+        </div>
+    </body>
+</html>
