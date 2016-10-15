@@ -1,15 +1,15 @@
 <body>
-    {{user.picture.large}}<br>
-    Gender: {{user.gender}}<br>
-    First Name: {{user.first}}<br>
-    Last Name: {{user.last}}<br>
-    Date of Birth: {{user.dob | date}}<br>
-    Street: {{user.street}}<br>
-    City: {{user.city}}<br>
-    State: {{user.state}}<br>
-    Zip: {{user.zip}}<br>
-    Phone: {{user.phone}}<br>
-    Cell: {{user.cell}}
-    Email: {{user.email}}<br>
+    <img ng-src="{{detailCtrl.user.picture.large}}"><br>
+    Gender: {{detailCtrl.user.gender}}<br>
+    First Name: {{detailCtrl.user.first}}<br>
+    Last Name: {{detailCtrl.user.last}}<br>
+    Date of Birth: {{detailCtrl.user.dob | date}}<br>
+    Street: {{detailCtrl.user.street}}<br>
+    City: {{detailCtrl.user.city}}<br>
+    State: {{detailCtrl.user.state}}<br>
+    Zip: {{detailCtrl.user.zip}}<br>
+    Phone: {{detailCtrl.user.phone}}<br>
+    Cell: {{detailCtrl.user.cell}}
+    Email: {{detailCtrl.user.email}}<br>
     <a href="#all">Back</a>
 </body>

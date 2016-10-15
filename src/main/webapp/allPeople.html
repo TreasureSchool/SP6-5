@@ -1,7 +1,7 @@
 <body>
     <h3>Name Details</h3>
-<!--    <div ng-repeat="user in userCtrl.users">
-        {{user.picture.thumbnail}} {{user.first}}  {{user.last}}
-        <em class="pull-right"><a href="#/detail" ng-click="">Details</a></em>   
-    </div>-->
+    <div ng-repeat="user in userCtrl.users">
+        <img ng-src="{{user.picture.thumbnail}}"> {{user.first}}  {{user.last}}
+        <em class="pull-right"><a href="#/detail" ng-click="userCtrl.setUser(user)">Details</a></em>
+    </div>
 </body>

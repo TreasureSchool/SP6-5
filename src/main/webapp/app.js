@@ -4,33 +4,33 @@
         $routeProvider
                 .when("/all", {
                     templateUrl: "allPeople.html",
-                    controller: "UserController",
+                    controller: function ($http, $routeParams) {
+                        var self = this;
+                        if (users.length === 0) {
+                            $http.get("Data/Data.json").success(function (data) {
+                                users = data.users;
+                                self.users = users;
+                            });
+                        } else { //We used the cache property on the http request instead
+                            self.users = users;
+                        }
+                        this.setUser = function (user) {
+                            currentUser = user;
+                        };
+                    },
                     controllerAs: "userCtrl"
                 })
                 .when("/detail", {
                     templateUrl: "personDetails.html",
-                    controller: "UserController",
-                    controllerAs: "userCtrl"
+                    controller: function () {
+                        this.user = currentUser;
+                    },
+                    controllerAs: "detailCtrl"
                 })
                 .otherwise({
                     template: "<p>Nothing has been selected,</p>"
                 });
     });
     var users = [];
-    app.controller("UserController", function ($http, $routeParams) {
-        var self = this;
-        if (users.length === 0) {
-            $http.get("data/data.json").success(function (data) {
-                users = data.users;
-                self.users = users;
-            });
-        } else { //We used the cache property on the http request instead
-            self.users = users;
-        }
-        if (users !== null) {
-            console.log("Adding user: " + $routeParams.id);
-            self.user = users[$routeParams.id];
-        }
-
-    });
-});
+    var currentUser;
+})();
