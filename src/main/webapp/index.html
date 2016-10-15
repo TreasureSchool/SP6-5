@@ -9,7 +9,16 @@
     </head>
     <body>
         <h1>Angular Routing</h1>
-        <a href="#all">All Persons</a>
-        <div ng-view></div>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <div>
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#all">All Users</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="col-md-9" ng-view></div>
     </body>
 </html>

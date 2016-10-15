@@ -4,7 +4,7 @@
         $routeProvider
                 .when("/all", {
                     templateUrl: "allPeople.html",
-                    controller: function ($http, $routeParams) {
+                    controller: function ($http) {
                         var self = this;
                         if (users.length === 0) {
                             $http.get("Data/Data.json").success(function (data) {
@@ -28,7 +28,7 @@
                     controllerAs: "detailCtrl"
                 })
                 .otherwise({
-                    template: "<p>Nothing has been selected,</p>"
+                    template: "<h1>Nothing has been selected</h1>"
                 });
     });
     var users = [];
